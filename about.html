@@ -8,8 +8,23 @@
 </head>
 <body>
 
-  <!-- Navigation Placeholder -->
-  <div id="nav-placeholder"></div>
+<!-- nav.html -->
+<nav>
+  <div class="container">
+    <a href="index.html" class="logo">Higgins Consulting</a>
+    <div class="hamburger">
+      <div></div><div></div><div></div>
+    </div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="security.html">Security Consulting</a></li>
+      <li><a href="ai.html">AI Automation</a></li>
+      <li><a href="about.html">About Me</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
 
   <!-- Hero -->
   <header id="home">
@@ -132,16 +147,6 @@
   <footer>
     <p>© 2025 Higgins Security Consulting. All Rights Reserved.</p>
   </footer>
-
-  <!-- Load Shared Navigation -->
-  <script>
-    fetch("nav.html")
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById("nav-placeholder").innerHTML = data;
-      })
-      .catch(err => console.error("Error loading navigation:", err));
-  </script>
 
   <script src="script.js"></script>
 </body>
