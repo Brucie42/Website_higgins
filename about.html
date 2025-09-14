@@ -3,59 +3,120 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jaden Higgins | Security Specialist</title>
+  <title>About Jaden Bruce Higgins</title>
   <link rel="stylesheet" href="style.css">
 </head>
+<script>
+  // Load the nav.html into the placeholder
+  fetch("nav.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("nav-placeholder").innerHTML = data;
+    });
+</script>
+
 <body>
 
-<nav>
-  <div class="container">
-    <a href="index.html" class="logo">Jaden Bruce Higgins - Security Specialist</a>
-    <div class="hamburger">
-      <div></div>
-      <div></div>
-      <div></div>
+  <!-- Navigation -->
+<div id="nav-placeholder"></div>
+
+  <!-- Hero -->
+  <header id="home">
+    <div class="hero container">
+      <h1 class="fade-in">Meet Bruce</h1>
+      <p class="fade-in" style="transition-delay:0.2s;">
+        Information Security Specialist with a proven track record of securing enterprises and enabling business success.
+      </p>
     </div>
-    <ul>
-      <li><a href="about.html">About</a></li>
-      <li><a href="#contact">Contact</a></li>
+  </header>
+
+  <!-- About Section -->
+  <section id="about" class="container fade-in">
+    <h2>Professional Profile</h2>
+    <div class="about-center">
+      <div class="about-photo">
+        <img src="face.jpg" alt="Professional photo of Jaden Higgins">
+      </div>
+      <div class="about-text">
+        <p>
+          I’m Bruce Higgins, an Information Security Specialist focused on helping organizations 
+          secure their infrastructure, optimize IT workflows, and align security strategy with 
+          business objectives.
+        </p>
+        <p>
+          I bring expertise in DevSecOps, cloud security, vulnerability management, and 
+          cross-functional leadership. My work has consistently delivered measurable improvements 
+          in security posture, operational efficiency, and compliance.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience" class="container fade-in">
+    <h2>Professional Experience</h2>
+    <div class="timeline">
+      <div class="job">
+        <h3>DevSecOps Engineer</h3>
+        <p>Built Linux servers, managed Kubernetes clusters, supported CI/CD, and solved developer deployment issues.</p>
+      </div>
+      <div class="job">
+        <h3>Application Security Specialist</h3>
+        <p>Automated audit processes, built vulnerability backlogs, and engineered API integrations to strengthen security posture.</p>
+      </div>
+      <div class="job">
+        <h3>Security Engineer</h3>
+        <p>Enhanced network visibility with Gigamon, mitigated 300+ vulnerabilities, and improved security protocol adherence by 20%.</p>
+      </div>
+      <div class="job">
+        <h3>Systems Engineer</h3>
+        <p>Provisioned servers, managed VMware & Active Directory, and led recovery during outages to minimize downtime.</p>
+      </div>
+      <div class="job">
+        <h3>Project Engineer</h3>
+        <p>Managed IT projects end-to-end, improved efficiency, and earned Special Achievement Recognition (SAR).</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="container fade-in">
+    <h2>Technical Skills</h2>
+    <ul class="skills">
+      <li><strong>Programming:</strong> Python, Java, SQL, Visual Basic</li>
+      <li><strong>Scripting:</strong> Bash, PowerShell</li>
+      <li><strong>Cloud & Server:</strong> AWS, VMware, Linux, Windows Server</li>
+      <li><strong>Security Tools:</strong> Tanium, Rapid7, Splunk, Imperva, Burp Suite, GHAS</li>
+      <li><strong>Automation & CI/CD:</strong> GitHub, Argo Workflows, Kubernetes, API Gateways</li>
+      <li><strong>Assessments:</strong> SCA, DAST, SAST scanning</li>
     </ul>
-  </div>
-</nav>
+  </section>
 
-<header id="home">
-  <h1 class="fade-in">Securing Enterprises, Optimizing Systems, Leading Projects</h1>
-  <p class="fade-in" style="transition-delay:0.2s;">Information Security Specialist | Cloud Security | Risk Management</p>
-  <a href="about.html" class="btn fade-in" style="transition-delay:0.4s;">Learn More</a>
-</header>
-
-<section class="container cards">
-  <div class="card fade-in" style="transition-delay:0.2s;">
-    <h2>Security Operations</h2>
-    <p>Evaluate, deploy, and maintain security measures across networks and systems.</p>
-  </div>
-  <div class="card fade-in" style="transition-delay:0.4s;">
-    <h2>Project Leadership</h2>
-    <p>Lead enterprise initiatives to optimize processes and strengthen defenses.</p>
-  </div>
-  <div class="card fade-in" style="transition-delay:0.6s;">
-    <h2>Risk Assessment</h2>
-    <p>Identify vulnerabilities and implement strategic countermeasures.</p>
-  </div>
-</section>
+  <!-- Certifications -->
+  <section id="certs" class="container fade-in">
+    <h2>Certifications & Education</h2>
+    <ul class="certs">
+      <li>CISSP (ISC2) – Expires 2028</li>
+      <li>AWS Certified Cloud Practitioner</li>
+      <li>Professional Scrum Master I</li>
+      <li>Cyber Security Essentials – Weber State University</li>
+      <li>B.S. Cybersecurity & Network Management – Weber State University</li>
+    </ul>
+  </section>
 
   <!-- Contact -->
   <section id="contact" class="container fade-in">
-    <h2>Contact Me</h2>
-    <p>If you’re interested in strengthening your security posture or need a consultant, let’s connect.</p>
+    <h2>Connect with Me</h2>
+    <p>If you're a recruiter or company looking for a skilled security professional, let’s connect.</p>
     <p><strong>Email:</strong> <a href="mailto:jadenbrucehiggins@gmail.com">jadenbrucehiggins@gmail.com</a></p>
-    <p><strong>Location:</strong> Layton, UT</p>
+    <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/jaden-higgins-a9516053" target="_blank" rel="noopener noreferrer">Jaden Bruce Higgins</a></p>
   </section>
 
-<footer>
-  <p>© 2025 Jaden Higgins. All Rights Reserved.</p>
-</footer>
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Jaden Bruce Higgins. All Rights Reserved.</p>
+  </footer>
 
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

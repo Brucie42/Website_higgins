@@ -6,21 +6,20 @@
   <title>AI Automation Services</title>
   <link rel="stylesheet" href="style.css">
 </head>
+<script>
+  // Load the nav.html into the placeholder
+  fetch("nav.html")
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById("nav-placeholder").innerHTML = data;
+    });
+</script>
+
 <body>
 
   <!-- Navigation -->
-  <nav>
-    <div class="container">
-      <a href="#home" class="logo">AI Automation</a>
-      <div class="hamburger">
-        <div></div><div></div><div></div>
-      </div>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
+<div id="nav-placeholder"></div>
+
 
   <!-- Hero -->
   <header id="home">
@@ -118,7 +117,7 @@
     <h2>Let's Build Something Smarter</h2>
     <p>If you're ready to explore how AI automation can transform your business, let's talk.</p>
     <p><strong>Email:</strong> <a href="mailto:jadenbrucehiggins@gmail.com">jadenbrucehiggins@gmail.com</a></p>
-    <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/jaden-higgins-a9516053">Jaden Bruce Higgins</a></p>
+    <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/jaden-higgins-a9516053" target="_blank">Jaden Bruce Higgins</a></p>
     
     <!-- <div class="contact-download">
       <a href="Public_Resume.pdf" download class="btn download-btn">Schedule a Call</a>
