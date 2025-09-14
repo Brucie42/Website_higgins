@@ -117,5 +117,5 @@ footer { background:#1e293b; text-align:center; padding:2rem; margin-top:2rem; }
 .about-text p em {
   font-style: italic;
   text-decoration: underline;
-  text-decoration-color: #888; /* A subtle color for the underline */
+  text-decoration-color: #00ff9d; /* A subtle color for the underline */
 }
