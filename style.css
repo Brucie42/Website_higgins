@@ -41,6 +41,13 @@ section h2 { font-size:2rem; margin-bottom:2rem; color:#22c55e; text-align:cente
 /* Contact */
 #contact p { margin:0.5rem 0; text-align:center; }
 
+/* CTA */
+#cta p { margin:0.5rem 0; text-align: center;}
+
+#cta {
+  text-align: center; /* This centers all content within the section */
+}
+
 /* Footer */
 footer { background:#1e293b; text-align:center; padding:2rem; margin-top:2rem; }
 
@@ -118,4 +125,26 @@ footer { background:#1e293b; text-align:center; padding:2rem; margin-top:2rem; }
   font-style: italic;
   text-decoration: underline;
   text-decoration-color: #00ff9d; /* A subtle color for the underline */
+}
+
+.btn1 {
+  display: inline-block; /* Makes the link behave like a block element, allowing for padding */
+  padding: 15px 30px; /* Gives the button space inside */
+  margin-top: 20px; /* Adds space between the paragraph and the button */
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none; /* Removes the underline from the link */
+  border-radius: 50px; /* Creates a pill shape */
+  background-color: #22c55e; /* A solid background color */
+  color: #fff; /* White text color */
+  border: none;
+  cursor: pointer; /* Changes the cursor to a pointer on hover */
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.btn1:hover {
+  background-color: #16a34a; /* Darker color on hover */
+  transform: translateY(-2px); /* A subtle lift effect */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
