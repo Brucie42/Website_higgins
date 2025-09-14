@@ -113,3 +113,9 @@ footer { background:#1e293b; text-align:center; padding:2rem; margin-top:2rem; }
   background: #16a34a;
   color: white;
 }
+
+.about-text p em {
+  font-style: italic;
+  text-decoration: underline;
+  text-decoration-color: #888; /* A subtle color for the underline */
+}
