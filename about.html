@@ -3,51 +3,63 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Jaden Bruce Higgins</title>
+  <title>About Me</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<script>
-  // Load the nav.html into the placeholder
-  fetch("nav.html")
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById("nav-placeholder").innerHTML = data;
-    });
-</script>
-
 <body>
 
-  <!-- Navigation -->
-<div id="nav-placeholder"></div>
+  <!-- Navigation Placeholder -->
+  <div id="nav-placeholder"></div>
 
   <!-- Hero -->
   <header id="home">
     <div class="hero container">
-      <h1 class="fade-in">Meet Bruce</h1>
+      <h1 class="fade-in">Secure. Optimize. Lead.</h1>
       <p class="fade-in" style="transition-delay:0.2s;">
-        Information Security Specialist with a proven track record of securing enterprises and enabling business success.
+        I help organizations strengthen their cybersecurity posture, optimize IT systems, and deliver projects with confidence.
       </p>
+      <a href="#contact" class="btn fade-in" style="transition-delay:0.4s;">Contact Me</a>
     </div>
   </header>
 
-  <!-- About Section -->
+  <!-- Picture & About -->
   <section id="about" class="container fade-in">
-    <h2>Professional Profile</h2>
+    <h2>About Me</h2>
     <div class="about-center">
       <div class="about-photo">
         <img src="face.jpg" alt="Professional photo of Jaden Higgins">
       </div>
       <div class="about-text">
         <p>
-          I’m Bruce Higgins, an Information Security Specialist focused on helping organizations 
-          secure their infrastructure, optimize IT workflows, and align security strategy with 
-          business objectives.
+          Hello, my name is Bruce. I’m an Information Security Specialist with proven experience securing enterprises, 
+          optimizing IT workflows, and leading mission-critical projects. My focus is on helping 
+          organizations reduce risk, strengthen their security posture, and align security strategy 
+          with business objectives.
         </p>
         <p>
-          I bring expertise in DevSecOps, cloud security, vulnerability management, and 
-          cross-functional leadership. My work has consistently delivered measurable improvements 
-          in security posture, operational efficiency, and compliance.
+          With expertise spanning DevSecOps, cloud infrastructure, vulnerability management, 
+          and cross-functional leadership, I bring both technical acumen and business alignment 
+          to every engagement.
         </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="container fade-in">
+    <h2>Fields of Expertise</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Enterprise Security</h3>
+        <p>Deploying tools, monitoring networks, and mitigating vulnerabilities to safeguard your infrastructure.</p>
+      </div>
+      <div class="card">
+        <h3>DevSecOps</h3>
+        <p>Integrating security into your SDLC and CI/CD pipelines to detect issues earlier and deliver safer code.</p>
+      </div>
+      <div class="card">
+        <h3>Project Leadership</h3>
+        <p>Leading cross-functional teams and driving security initiatives from concept to implementation.</p>
       </div>
     </div>
   </section>
@@ -94,7 +106,7 @@
 
   <!-- Certifications -->
   <section id="certs" class="container fade-in">
-    <h2>Certifications & Education</h2>
+    <h2>Certifications</h2>
     <ul class="certs">
       <li>CISSP (ISC2) – Expires 2028</li>
       <li>AWS Certified Cloud Practitioner</li>
@@ -106,16 +118,30 @@
 
   <!-- Contact -->
   <section id="contact" class="container fade-in">
-    <h2>Connect with Me</h2>
-    <p>If you're a recruiter or company looking for a skilled security professional, let’s connect.</p>
+    <h2>Contact Me</h2>
+    <p>If you’re interested in strengthening your security posture or need a consultant, let’s connect.</p>
     <p><strong>Email:</strong> <a href="mailto:jadenbrucehiggins@gmail.com">jadenbrucehiggins@gmail.com</a></p>
-    <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/jaden-higgins-a9516053" target="_blank" rel="noopener noreferrer">Jaden Bruce Higgins</a></p>
+    <p><strong>LinkedIn:</strong> 
+      <a href="https://www.linkedin.com/in/jaden-higgins-a9516053" target="_blank" rel="noopener noreferrer">
+        Jaden Bruce Higgins
+      </a>
+    </p>
   </section>
 
   <!-- Footer -->
   <footer>
-    <p>© 2025 Jaden Bruce Higgins. All Rights Reserved.</p>
+    <p>© 2025 Higgins Security Consulting. All Rights Reserved.</p>
   </footer>
+
+  <!-- Load Shared Navigation -->
+  <script>
+    fetch("nav.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("nav-placeholder").innerHTML = data;
+      })
+      .catch(err => console.error("Error loading navigation:", err));
+  </script>
 
   <script src="script.js"></script>
 </body>

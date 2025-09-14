@@ -6,15 +6,6 @@
   <title>Security Consulting</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<script>
-  // Load the nav.html into the placeholder
-  fetch("nav.html")
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById("nav-placeholder").innerHTML = data;
-    });
-</script>
-
 <body>
 
   <!-- Navigation -->
@@ -90,6 +81,16 @@
   <footer>
     <p>© 2025 Higgins Security Consulting. All Rights Reserved.</p>
   </footer>
+  
+  <!-- Load Shared Navigation -->
+  <script>
+    fetch("nav.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("nav-placeholder").innerHTML = data;
+      })
+      .catch(err => console.error("Error loading navigation:", err));
+  </script>
 
   <script src="script.js"></script>
 </body>
