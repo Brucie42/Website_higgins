@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blog — BruceByte</title>
+  <meta name="description" content="Weekly blog posts from BruceByte." />
+  <link rel="canonical" href="https://brucebyte.com/blog/" />
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/blog.css">
+</head>
+<body>
+  <nav>
+    <div class="container">
+      <a href="/" class="logo">BruceByte</a>
+      <ul>
+      <li><a href="/index.html">Home</a></li>
+      <li><a href="/security.html">Security Consulting</a></li>
+      <li><a href="/ai.html">AI Automation</a></li>
+      <li><a href="/about.html">About Me</a></li>
+      <li><a href="blog/index.html">Blog</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container" style="padding-top:6rem">
+    <header class="blog-hero">
+      <h1 class="title">Weekly Blog</h1>
+      <p class="sub">New posts every week.</p>
+    </header>
+
+    <div id="list" class="blog-list" aria-live="polite"></div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 BruceByte. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const fallbackPosts = [
+      { title: "Welcome to the Weekly Blog", date: "2025-09-08", url: "/blog/2025-09-08-welcome.html", excerpt: "Kickoff note explaining what to expect here.", tags: ["intro"] },
+      { title: "Another Sample Post", date: "2025-09-01", url: "/blog/2025-09-01-sample.html", excerpt: "A short example entry to show layout.", tags: ["sample"] }
+    ];
+
+    async function loadPosts() {
+      try {
+        const res = await fetch('/blog/posts.json', { cache: 'no-store' });
+        if (!res.ok) throw new Error('No posts.json yet');
+        const data = await res.json();
+        if (!Array.isArray(data)) throw new Error('posts.json must be an array');
+        return data;
+      } catch (e) {
+        return fallbackPosts;
+      }
+    }
+
+    function formatDate(iso) {
+      const d = new Date(iso + 'T00:00:00');
+      return d.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' });
+    }
+
+    function byMostRecent(a, b) {
+      return new Date(b.date) - new Date(a.date);
+    }
+
+    function render(posts) {
+      const list = document.getElementById('list');
+      list.innerHTML = '';
+      if (!posts.length) {
+        list.innerHTML = '<div class="empty">No posts yet. Add some to <code>/blog/posts.json</code>!</div>';
+        return;
+      }
+
+      let lastYear = null;
+      posts.sort(byMostRecent).forEach(p => {
+        const year = new Date(p.date).getFullYear();
+        if (year !== lastYear) {
+          const h = document.createElement('div');
+          h.className = 'year';
+          h.textContent = year;
+          list.appendChild(h);
+          lastYear = year;
+        }
+
+        const article = document.createElement('article');
+        article.className = 'blog-card';
+
+        const title = document.createElement('h2');
+        title.className = 'post-title';
+        const link = document.createElement('a');
+        link.href = p.url;
+        link.textContent = p.title;
+        title.appendChild(link);
+
+        const meta = document.createElement('div');
+        meta.className = 'meta';
+        const date = document.createElement('span');
+        date.textContent = formatDate(p.date);
+        meta.appendChild(date);
+
+        if (Array.isArray(p.tags) && p.tags.length) {
+          const tags = document.createElement('span');
+          tags.className = 'tags';
+          p.tags.forEach(t => {
+            const tag = document.createElement('span');
+            tag.className = 'tag';
+            tag.textContent = t;
+            tags.appendChild(tag);
+          });
+          meta.appendChild(tags);
+        }
+
+        const excerpt = document.createElement('p');
+        excerpt.className = 'excerpt';
+        excerpt.textContent = p.excerpt || '';
+
+        article.appendChild(title);
+        article.appendChild(meta);
+        if (excerpt.textContent) article.appendChild(excerpt);
+        list.appendChild(article);
+      });
+    }
+
+    (async function init() {
+      const posts = await loadPosts();
+      render(posts);
+
+      const ld = {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "name": "BruceByte Weekly Blog",
+        "url": "https://brucebyte.com/blog/",
+        "blogPost": posts.slice(0, 10).map(p => ({
+          "@type": "BlogPosting",
+          "headline": p.title,
+          "datePublished": p.date,
+          "url": new URL(p.url, location.origin).toString()
+        }))
+      };
+      const s = document.createElement('script');
+      s.type = 'application/ld+json';
+      s.textContent = JSON.stringify(ld);
+      document.head.appendChild(s);
+    })();
+  </script>
+</body>
+</html>
